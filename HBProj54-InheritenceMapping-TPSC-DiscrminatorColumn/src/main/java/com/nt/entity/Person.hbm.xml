@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.nt.entity.Person" table="DISCRI_INH_PERSON_TPSC" discriminator-value="per">
+       <id name="id">
+           <generator class="increment"/>
+       </id>
+       <discriminator column="PERSON_TYPE"  type="string" length="20"/> 
+        <property name="name"  length="20"/>
+        <property name="addrs"  length="20"/>
+        <subclass name="com.nt.entity.Employee"  discriminator-value="emp" >
+              <join table="DISCRI_INH_EMPLOYEE_TPSC">
+                  <key column="PERSON_ID"   />
+                  <property name="desg"  length="20"/>
+                  <property name="deptNo" />
+                  <property name="salary"/>
+                </join>
+        </subclass>
+        <subclass name="com.nt.entity.Customer"  discriminator-value="cust" >
+            <join table="DESCRI_INH_CUSTOMER_TPSC">
+                 <key column="PERSON_ID"/>
+                 <property name="billAmt"  />
+                 <property name="paymentType" length="20"/>
+              </join>
+        </subclass>
+        
+   </class>
+</hibernate-mapping>        
