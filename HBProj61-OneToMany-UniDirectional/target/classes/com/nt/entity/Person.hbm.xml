@@ -10,7 +10,7 @@
        </id>
        <property name="pname"  length="20"/>
        <property name="paddrs"  length="20"/>
-       <set  name="accounts" cascade="all" lazy="true">
+       <set  name="accounts" cascade="all-delete-orphan" lazy="true">
            <key column="PEROSON_ID"/>
            <one-to-many class="com.nt.entity.BankAccount" />
        </set>
