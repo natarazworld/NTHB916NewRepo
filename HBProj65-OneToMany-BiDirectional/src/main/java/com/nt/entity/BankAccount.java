@@ -17,7 +17,7 @@ public class BankAccount {
 	@NonNull
 	private  String location;
 	
-	private  Person person;  // for Many to One
+	private  IPerson person;  // for Many to One
 	
 	public BankAccount() {
 		System.out.println("BankAccount:: 0-param constructor");

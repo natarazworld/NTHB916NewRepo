@@ -3,7 +3,6 @@ package com.nt.entity;
 import java.util.Set;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @RequiredArgsConstructor
-public class Person {
+public class Person  implements IPerson {
 	private  Integer pid;
 	@NonNull
 	private String pname;
@@ -20,13 +19,16 @@ public class Person {
 	private  Set<BankAccount> accounts;  //One To many
 	
 	public Person() {
-		System.out.println("Person:: 0-param constructor"+this.getClass());
+		System.out.println("Person:: 0-param constructor"+this.getClass()+"   "+this.getClass().getSuperclass());
 	}
 	
 	@Override
 	public String toString() {
 		return "Person [pid=" + pid + ", pname=" + pname + ", paddrs=" + paddrs + "]";
 	}
+
+
+	
 
 	
 	

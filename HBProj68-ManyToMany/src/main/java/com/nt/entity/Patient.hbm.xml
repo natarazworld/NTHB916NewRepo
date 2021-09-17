@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.nt.entity.Patient" table="NIT_MTM_PATIENT">
+         <id name="patId">
+               <generator class="sequence">
+                   <param name="sequence_name">PATID_SEQ</param>
+                   <param name="initial_value">1000</param>
+                   <param name="increment_size">1</param>
+               </generator>
+         </id>
+         <property name="patName"  length="20"/>
+         <property name="problem"  length="20"/>
+         <set name="doctors"  table="NIT_MTM_DOCTORS_PATIENTS" cascade="all"  lazy="true">
+            <key column="PATIENT_ID"/>  <!-- Owning side FK column -->
+            <many-to-many class="com.nt.entity.Doctor" column="DOCTOR_ID"/> <!-- Non-owning side FK column -->
+         </set>
+   </class>
+</hibernate-mapping>        

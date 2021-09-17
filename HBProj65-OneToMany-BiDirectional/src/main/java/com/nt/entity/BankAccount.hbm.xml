@@ -15,6 +15,6 @@
          <property name="bankName"  length="20"/>
          <property name="type"  length="20"/>
          <property name="location" length="10"/>
-         <many-to-one name="person" class="com.nt.entity.Person"  column="PERSON_ID" cascade="all"  lazy="false"/>
+         <many-to-one name="person" class="com.nt.entity.Person"  column="PERSON_ID" cascade="all"  lazy="no-proxy"/>
    </class>
 </hibernate-mapping>        

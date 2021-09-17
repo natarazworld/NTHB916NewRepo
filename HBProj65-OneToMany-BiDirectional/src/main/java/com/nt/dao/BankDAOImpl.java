@@ -8,9 +8,9 @@ import javax.persistence.Query;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.internal.build.AllowSysOut;
 
 import com.nt.entity.BankAccount;
+import com.nt.entity.IPerson;
 import com.nt.entity.Person;
 import com.nt.utility.HibernateUtil;
 
@@ -112,8 +112,8 @@ public class BankDAOImpl implements IBankDAO {
 		   List<BankAccount> list=query.getResultList();
 			list.forEach(ac->{
 			   System.out.println("Account (child) ::"+ac);
-				Person per=ac.getPerson();
-				 System.out.println(" Person (parent) ::"+per);
+				IPerson per=ac.getPerson();
+				 System.out.println(" Person (parent) ::"+per);  
 			});
 		}
 		catch(HibernateException he) {

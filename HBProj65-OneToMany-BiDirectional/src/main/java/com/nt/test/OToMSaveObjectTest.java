@@ -9,10 +9,10 @@ public class OToMSaveObjectTest {
 	public static void main(String[] args) {
 		//create DAO class obj
 		IBankDAO dao=new BankDAOImpl();
-		//dao.saveDataUsingParent();
+		dao.saveDataUsingParent();
 		//dao.saveDataUsingChild();
 		//dao.loadDataUsingParent();
-		dao.loadDataUsingChild();
+		//dao.loadDataUsingChild();
 		//dao.deleteDataUsingParent();
 		//dao.deleteAlltheChildsOfAParent();
 		//dao.addChildToAParent();
