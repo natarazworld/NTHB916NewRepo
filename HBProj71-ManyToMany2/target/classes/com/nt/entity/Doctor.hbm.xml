@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.nt.entity.Doctor" table="NIT_MTM_DOCTOR_IDBAG"  >
+       <id name="docId">
+         <generator class="increment"/>
+       </id>
+       <property name="docName"  length="20"/>
+       <property name="category"  length="20"/>
+       <set  name="patients" cascade="all" lazy="extra"  inverse="true"  table="NIT_MTM_DOCTORS_PATIENTS_IDBAG" >
+           <key column="DOCTOR_ID"/> <!-- owning side FK column -->
+           <many-to-many class="com.nt.entity.Patient" column="PATIENT_ID" /> <!-- non-owning side FK column -->
+       </set>
+       
+   </class>
+</hibernate-mapping>        
