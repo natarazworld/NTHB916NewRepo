@@ -2,6 +2,9 @@ package com.nt.entity;
 
 import java.util.Set;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -11,6 +14,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @RequiredArgsConstructor
+
 public class Person {
 	private  Integer pid;
 	@NonNull

@@ -5,6 +5,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
    <class name="com.nt.entity.BankAccount" table="NIT_OTM_BANKACCOUNT">
+      
          <id name="accno">
                <generator class="sequence">
                    <param name="sequence_name">ACCNO_SEQ</param>
@@ -12,6 +13,7 @@
                    <param name="increment_size">1</param>
                </generator>
          </id>
+         
          <property name="bankName"  length="20"/>
          <property name="type"  length="20"/>
          <property name="location" length="10"/>
